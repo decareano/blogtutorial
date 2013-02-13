@@ -1,6 +1,7 @@
 Blogtutorial::Application.routes.draw do
   devise_for :users
 
+  match 'posts/page/:page' => 'posts#index'
   resources :posts
 
   root :to => 'posts#index'

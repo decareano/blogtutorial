@@ -2,7 +2,7 @@
   <h1 class="postTitle"><%= link_to post.title, post %></h1>
   <p class="date"><small><%= post.created_at.to_date.readable_inspect %> by No One</small></p>
   <div class="post">
-    <%= simple_format post.body %>
+    <%= raw textilize(post.body) %>
   </div>
   <%- if user_signed_in? && current_user.is_blogger %>
     <small>
